@@ -15,43 +15,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="custom" rowHeight="591" id="jCJ-55-nFN" customClass="CustomTableViewCell" customModule="Reto3" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="50" width="393" height="591"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jCJ-55-nFN" id="PD4-p0-GSS">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="591"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Title" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="STq-MM-tnY">
-                                            <rect key="frame" x="20" y="23" width="353" height="34"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
-                                            <connections>
-                                                <action selector="titleCel:" destination="jCJ-55-nFN" eventType="editingDidEnd" id="SxW-Ug-wfC"/>
-                                                <action selector="titleTextfield:" destination="uWR-Uf-rf6" eventType="editingDidEnd" id="LX4-D5-yjV"/>
-                                            </connections>
-                                        </textField>
-                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Priority" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I2D-84-1xf">
-                                            <rect key="frame" x="20" y="65" width="353" height="34"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
-                                            <connections>
-                                                <action selector="priorityTextField:" destination="uWR-Uf-rf6" eventType="editingDidEnd" id="4bV-Tz-jjJ"/>
-                                            </connections>
-                                        </textField>
-                                    </subviews>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="priorityCel" destination="I2D-84-1xf" id="H1d-Ev-byG"/>
-                                    <outlet property="titleCel" destination="STq-MM-tnY" id="uZF-Uq-22s"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="uWR-Uf-rf6" id="yPI-qp-Hh1"/>
+                            <outlet property="dataSource" destination="uWR-Uf-rf6" id="yNZ-U2-SbO"/>
                             <outlet property="delegate" destination="uWR-Uf-rf6" id="vY9-dm-Aj3"/>
                         </connections>
                     </tableView>
@@ -59,7 +24,6 @@
                         <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="T2J-IE-hak">
                             <connections>
                                 <action selector="addTask:" destination="uWR-Uf-rf6" id="yT5-vS-Mv0"/>
-                                <segue destination="a4a-ja-ZHh" kind="modal" id="b6G-rJ-CGK"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -71,9 +35,9 @@
         <!--Add Task-->
         <scene sceneID="Kfw-RE-NMd">
             <objects>
-                <tableViewController id="a4a-ja-ZHh" customClass="FormTableViewController" customModule="Reto3" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="Form" id="a4a-ja-ZHh" customClass="FormTableViewController" customModule="Reto3" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="W7d-Ap-xbg">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <sections>
@@ -86,13 +50,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="523"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kfu-Lx-Bio">
+                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kfu-Lx-Bio">
                                                     <rect key="frame" x="20" y="11" width="353" height="34"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
-                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DBG-MP-1Mw">
+                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Priority" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DBG-MP-1Mw">
                                                     <rect key="frame" x="20" y="53" width="353" height="34"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>

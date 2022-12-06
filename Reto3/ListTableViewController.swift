@@ -9,14 +9,6 @@ import UIKit
 
 class ListTableViewController: UITableViewController {
     
-    /*
-    var tasks = [Task(title: "First Task",
-                       description: "Description about First Description",
-                       priority: "Low"
-                       ),
-                ]
-    */
-    
     var arrayTask : [Task] = []
     var indexTask : Int = 0
 
@@ -27,6 +19,10 @@ class ListTableViewController: UITableViewController {
     }
     
     @IBAction func addTask(_ sender: Any) {
+        
+        //let addTaskVC = FormTableViewController()
+        let addTaskVC = self.storyboard?.instantiateViewController(identifier: "Form") as! FormTableViewController
+        self.present(addTaskVC, animated: true)
         
     }
     
@@ -45,6 +41,7 @@ extension ListTableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         if let cell = tableView.dequeueReusableCell(withIdentifier: "custom", for: indexPath) as? CustomTableViewCell{
             let task = arrayTask[indexPath.row]
             cell.titleCel?.text = task.title
@@ -56,24 +53,24 @@ extension ListTableViewController {
 
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
-    }
-    
-    
     
 }
 
 
 extension ListTableViewController: NewTaskTableControllerDelegate{
-    func NewViewController(_ ViewController: FormTableViewController, didCreateTask newTask: Task) {
-        
+    func formTableViewControllerDelegate(_ viewController: FormTableViewController, didCreateTask newTask: Task) {
         arrayTask.append(newTask)
-        print("es o no es")
+        print("TASK nuevo :")
         print(arrayTask)
         tableView.reloadData()
     }
+    
+    
 }
+
+
+
+
     
 
 
