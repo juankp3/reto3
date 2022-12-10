@@ -8,7 +8,8 @@
 import UIKit
 
 protocol NewTaskTableControllerDelegate{
-    func formTableViewControllerDelegate(_ viewController:FormTableViewController, didCreateTask newTask: Task)
+    //func addTask(_ viewController:UIViewController, didCreateTask newTask: Task)
+    func addTarea(_view: UIViewController, didcreateTarea tarea: Task)
 }
 
 class FormTableViewController: UITableViewController {
@@ -16,7 +17,6 @@ class FormTableViewController: UITableViewController {
     @IBOutlet weak var titleTextFueld: UITextField!
     @IBOutlet weak var priorityTextField: UITextField!
     @IBOutlet weak var descriptionTextField: UITextView!
-    
     var delegate : NewTaskTableControllerDelegate?
     
     @IBAction func closeButtom(_ sender: Any) {
@@ -35,10 +35,11 @@ class FormTableViewController: UITableViewController {
         priorityField    = priorityField.trimmingCharacters(in: .whitespacesAndNewlines)
         
         let task = Task(title: titleField , description: descriptionField, priority:priorityField)
-        print("task: ")
-        print(task)
-        delegate?.formTableViewControllerDelegate(self, didCreateTask: task)
-        dismiss(animated: true)
+        //print("task: ")
+        //print(task)
+        //delegate?.addTask(self, didCreateTask: task)
+        delegate?.addTarea(_view: self, didcreateTarea: task)
+        //dismiss(animated: true)
         
 
         
